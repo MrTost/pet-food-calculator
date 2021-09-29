@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+
+    <title>Title</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body class="h-100 w-100">
+
+<div class="pfc-container">
+
+    <!-- CALC INPUT -->
+    <div class="container mb-5">
+        <form id="pfcInForm">
+            <!-- TYPE -->
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="pfcInType" id="pfcInTypeDog">
+                <label class="form-check-label" for="pfcInTypeDog">
+                    Dog
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="pfcInType" id="pfcInTypeCat">
+                <label class="form-check-label" for="pfcInTypeCat">
+                    Cat
+                </label>
+            </div>
+            <!-- WEIGHT -->
+            <div class="my-1">
+                <label for="pfcInWeight" class="form-label">Pet Weight</label>
+                <input type="text" class="form-control" id="pfcInWeight">
+            </div>
+            <!-- WEIGHT TYPE -->
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="pfcInWeightType" id="pfcInWeightOver">
+                <label class="form-check-label" for="pfcInWeightOver">
+                    Overweight
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="pfcInWeightType" id="pfcInWeightUnder">
+                <label class="form-check-label" for="pfcInWeightUnder">
+                    Underweight
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="pfcInWeightType" id="pfcInWeightIdeal">
+                <label class="form-check-label" for="pfcInWeightIdeal">
+                    Ideal
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="pfcInWeightType" id="pfcInWeightIdealActive">
+                <label class="form-check-label" for="pfcInWeightIdealActive">
+                    Ideal Active
+                </label>
+            </div>
+            <!-- FEEDING FREQUENCY -->
+            <h6 class="my-1">Feeding frequency</h6>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="pfcInFrequency" id="pfcInFreq1" value="1">
+                <label class="form-check-label" for="pfcInFreq1">1x Day</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="pfcInFrequency" id="pfcInFreq2" value="2">
+                <label class="form-check-label" for="pfcInFreq2">2x Day</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="pfcInFrequency" id="pfcInFreq3" value="3">
+                <label class="form-check-label" for="pfcInFreq3">3x Day</label>
+            </div>
+
+            <div class="d-grid gap-2 mt-2">
+                <button type="submit" class="btn btn-primary">Calculate</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- CALC OUTPUT -->
+    <div class="container">
+        <div class="row row-cols-2">
+            <div class="col">PET:</div>
+            <div class="col" id="pfcOutType">DOG</div>
+
+            <div class="col">WEIGHT:</div>
+            <div class="col" id="pfcOutWeight">10 LBS</div>
+
+            <div class="col">YOUR PET IS:</div>
+            <div class="col" id="pfcOutWeightType">IDEAL WEIGHT</div>
+
+            <div class="col">FEEDING (X) DAY:</div>
+            <div class="col" id="pfcOutFrequency">2</div>
+
+            <div class="col">EVERY DAY FEEDING:</div>
+            <div class="col" id="pfcOutFeedDay">0.2 LBS</div>
+
+            <div class="col">EACH FEED:</div>
+            <div class="col" id="pfcOutFeed">0.1 LBS</div>
+
+            <div class="col">
+                <button type="button" class="btn btn-outline-primary">COST</button>
+            </div>
+            <div class="col">
+                <button type="button" class="btn btn-outline-primary" id="pfcBtnReset">REST</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="index.js"></script>
+</body>
+</html>

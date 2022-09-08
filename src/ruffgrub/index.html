@@ -16,8 +16,42 @@
         <!-- CALC INPUT -->
         <div class="p-3">
             <form id="pfcInForm" autocomplete="off">
+                <!-- PET TYPE -->
+                <div class="mb-2 h5">Which pet do you have?</div>
+
+                <select class="form-select" id="pfcInType" aria-label="Which pet do you have?">
+                    <option value="dog">Dog</option>
+                    <option value="cat">Cat</option>
+                </select>
+
+                <hr class="w-100" />
+
+                <!-- PET AGE -->
+                <div class="mb-2 h5">How old is your pet?</div>
+
+                <select class="form-select" id="pfcInAge" aria-label="How old is your pet?">
+                    <option value="young">Puppy</option>
+                    <option value="adult">Adult</option>
+                    <option value="senior">Senior</option>
+                    <option value="performance">Performance</option>
+                </select>
+
+                <hr class="w-100" />
+
+                <!-- PET ACTIVE -->
+                <div class="mb-2 h5">How active is your pet?</div>
+
+                <select class="form-select" id="pfcInActive" aria-label="How active is your pet?">
+                    <option value="low">Low</option>
+                    <option value="moderate">Moderate</option>
+                    <option value="high">High</option>
+                </select>
+
+                <hr class="w-100" />
+
                 <!-- WEIGHT -->
                 <label for="pfcInWeight" class="form-label h5">How much does your pet weigh?</label>
+
                 <div class="input-group has-validation mb-1">
                     <input type="text" class="form-control" id="pfcInWeight" placeholder="Ex: 100.00">
                     <select class="form-select" id="pfcInUnit" style="max-width: 80px" aria-label="Unit of measure">
@@ -27,36 +61,6 @@
                     <div id="validationServerUsernameFeedback" class="invalid-feedback">
                         Please enter only numbers.
                     </div>
-                </div>
-
-                <hr class="w-100" />
-
-                <div class="mb-2 h5">How do you feel about your pet's weight?</div>
-
-                <!-- WEIGHT TYPE -->
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="pfcInWeightType" id="pfcInWeightOver">
-                    <label class="form-check-label" for="pfcInWeightOver">
-                        Overweight
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="pfcInWeightType" id="pfcInWeightUnder">
-                    <label class="form-check-label" for="pfcInWeightUnder">
-                        Underweight
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="pfcInWeightType" id="pfcInWeightIdeal" checked>
-                    <label class="form-check-label" for="pfcInWeightIdeal">
-                        Ideal
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="pfcInWeightType" id="pfcInWeightIdealActive">
-                    <label class="form-check-label" for="pfcInWeightIdealActive">
-                        Ideal and very active
-                    </label>
                 </div>
 
                 <hr class="w-100" />
@@ -88,9 +92,6 @@
             <div class="row row-cols-2">
                 <div class="col h6">PET WEIGHT:</div>
                 <div class="col text-end" id="pfcOutWeight"></div>
-
-                <div class="col h6">WEIGHT IS:</div>
-                <div class="col text-end text-uppercase" id="pfcOutWeightType"></div>
 
                 <div class="col h6">FEEDING:</div>
                 <div class="col text-end" id="pfcOutFrequency"></div>

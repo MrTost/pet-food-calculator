@@ -12,9 +12,15 @@ const stylesHandler = MiniCssExtractPlugin.loader;
 
 
 const config = {
-    entry: './src/index.js',
+    entry: {
+        leonefinefoods: [path.resolve(__dirname, "src", "leonefinefoods", "index.js")],
+        ruffgrub: [path.resolve(__dirname, "src", "ruffgrub", "index.js")],
+    },
     output: {
+        filename: '[name]/[name].js',
         path: path.resolve(__dirname, 'dist'),
+        publicPath: "",
+        clean: true,
     },
     devServer: {
         open: true,
@@ -22,10 +28,19 @@ const config = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: 'src/index.html',
+            template: path.resolve(__dirname, "src", "leonefinefoods", "index.html"),
+            filename: "leonefinefoods/index.html",
+            chunks: ["leonefinefoods"],
+        }),
+        new HtmlWebpackPlugin({
+            template: path.resolve(__dirname, "src", "ruffgrub", "index.html"),
+            filename: "ruffgrub/index.html",
+            chunks: ["ruffgrub"],
         }),
 
-        new MiniCssExtractPlugin(),
+        new MiniCssExtractPlugin({
+            filename: '[name]/[name].css',
+        }),
 
         // Add your plugins here
         // Learn more about plugins from https://webpack.js.org/configuration/plugins/
@@ -78,8 +93,6 @@ const config = {
 module.exports = () => {
     if (isProduction) {
         config.mode = 'production';
-
-
     } else {
         config.mode = 'development';
     }
